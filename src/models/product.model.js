@@ -32,7 +32,7 @@ var productSchema = new Schema({
   },
   product_shop: {
     types: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'Shop'
   },
   product_attributes: {
     type: Schema.Types.Mixed,
@@ -43,17 +43,24 @@ var productSchema = new Schema({
     timestamps: true
 });
 
-const clothingSchema = new Schema({
+const clothingSchema = new Schema(
+  {
     brand: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
     size: String,
-    material: String
-}, {
-    collection: 'clothes',
-    timestamps: true
-})
+    material: String,
+    product_shop: {
+      types: Schema.Types.ObjectId,
+      ref: "Shop",
+    },
+  },
+  {
+    collection: "clothes",
+    timestamps: true,
+  }
+);
 
 const electronicSchema = new Schema(
   {
@@ -63,6 +70,10 @@ const electronicSchema = new Schema(
     },
     model: String,
     color: String,
+    product_shop: {
+      types: Schema.Types.ObjectId,
+      ref: "Shop",
+    },
   },
   {
     collection: "electronics",
