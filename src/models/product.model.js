@@ -34,7 +34,7 @@ var productSchema = new Schema(
       enum: ["Electronics", "Clothing", "Furniture"],
     },
     product_shop: {
-      types: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Shop",
     },
     product_attributes: {
@@ -89,7 +89,7 @@ const clothingSchema = new Schema(
     size: String,
     material: String,
     product_shop: {
-      types: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Shop",
     },
   },
@@ -108,7 +108,7 @@ const electronicSchema = new Schema(
     model: String,
     color: String,
     product_shop: {
-      types: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Shop",
     },
   },
@@ -127,7 +127,7 @@ const furnitureSchema = new Schema(
     size: String,
     material: String,
     product_shop: {
-      types: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Shop",
     },
   },

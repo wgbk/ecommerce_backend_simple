@@ -23,6 +23,14 @@ class ProductFactory {
     }
     return new productClass(payload).createProduct();
   }
+
+  static async updateProduct(type, payload) {
+    const productClass = ProductFactory.productRegistry[type];
+    if (!productClass) {
+      throw new BadRequestError(`Invalid Product Types ${type}`);
+    }
+    return new productClass(payload).createProduct();
+  }
   // PUT //
   static async publishProductByShop({ product_shop, product_id }) {
     return await publishProductByShop({ product_shop, product_id });
@@ -45,7 +53,15 @@ class ProductFactory {
   }
 
   static async searchProducts({ keySearch }) {
-    return await searchProductByUser({ keySearch })
+    return await searchProductByUser({ keySearch });
+  }
+
+  static async findAllProducts({ keySearch }) {
+    return await searchProductByUser({ keySearch });
+  }
+
+  static async findProduct({ keySearch }) {
+    return await searchProductByUser({ keySearch });
   }
 }
 
