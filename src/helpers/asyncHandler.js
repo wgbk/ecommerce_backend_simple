@@ -4,4 +4,6 @@ const asyncHandler = (fn) => {
   };
 };
 
-module.exports = asyncHandler
+module.exports = {
+  asyncHandler
+};
