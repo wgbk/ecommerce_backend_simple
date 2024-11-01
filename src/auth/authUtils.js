@@ -1,7 +1,7 @@
 'use strict'
 
 const JWT = require('jsonwebtoken');
-const asyncHandler = require('../helpers/asyncHandler');
+const { asyncHandler } = require("../helpers/asyncHandler");
 const { AuthFailureError, NotFoundError } = require('../core/error.response');
 const { findByUserId } = require('../services/keyToken.service');
 
