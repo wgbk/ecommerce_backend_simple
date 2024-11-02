@@ -153,6 +153,7 @@ class AccessService {
     });
 
     if (newShop) {
+      // Alo: JWT + RSA (example, not use this repo)
       // const { privateKey, publicKey } = crypto.generateKeyPairSync(
       //   "rsa",
       //   {
